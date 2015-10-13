@@ -1,0 +1,1893 @@
+/* GLOBAL STYLES
+-------------------------------------------------- */
+/* Padding below the footer and lighter body text */
+
+html{
+  font-family: "Lato", "Helvetica Neue",Helvetica,Arial,sans-serif;
+  height:  100%;
+  font-size: 18px;
+}
+
+body {
+  padding-bottom: 40px;
+  background-color: #fff;
+  color: #6a6a6a;
+  height:  100%;
+}
+
+h1{
+  font-family: "Lato", "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 42px;
+}
+
+h2{
+  font-family: "Lato", "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 36px;
+}
+
+h3{
+  font-family: "Lato", "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: 600;
+  color: #050607;
+  font-size: 32px;
+}
+
+h4{
+  font-family: "Lato", "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 24px;
+}
+
+textarea{
+  font-family: "Lato", "Helvetica Neue",Helvetica,Arial,sans-serif;
+  resize: none;
+  border-radius: 5px;
+  display: block;
+}
+
+input, label, p{
+  font-family: "Lato", "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 18px;
+}
+
+div{
+  font-family: "Lato", "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.mt25{
+  margin-top: 25px;
+}
+
+.btn{
+  font-family: "Oswald", "Lato", "Helvetica Neue",Helvetica,Arial,sans-serif;
+  text-transform: uppercase;
+}
+
+.copy-right{
+  font-size: 14px;
+}
+
+.warning-msg{
+  padding-top: 36px;
+}
+
+a.white-underline{
+  color:#fff;
+  text-decoration: underline;
+}
+
+a.white-underline:hover{
+  color:#ff0000;
+}
+
+a.facebook-color{
+  color: #3c5b9a;
+  border-color: #3c5b9a;
+}
+
+a.google-plus-color{
+  color: #d94a39;
+  border-color: #d94a39;
+}
+
+a.twitter-color{
+  color: #fff;
+  border-color: #55acee;
+}
+
+a.copy-link-color,
+a.social-media-color{
+  color: #fff;
+  border-color: #777;
+}
+
+a.share-campaign-color {
+  color: #1CBCB2;
+}
+
+a.user-looged-name{
+  color:#5a5a5a;
+  text-decoration: underline;
+}
+
+
+a.facebook-color:hover, 
+a.facebook-color:active,
+a.google-plus-color:hover, 
+a.google-plus-color:active,
+a.twitter-color:hover, 
+a.twitter-color:active,
+a.copy-link-color:hover,
+a.copy-link-color:active{
+  opacity: 0.7;
+}
+
+.user-logged {
+  color:#5a5a5a !important;
+}
+
+
+/* CUSTOMIZE THE NAVBAR
+-------------------------------------------------- */
+
+/* Special class on .container surrounding .navbar, used for positioning it into place. */
+.navbar-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 20;
+  padding-top: 15px;
+  background-color: #292c35;
+  height: 95px;
+}
+
+/* Flip around the padding for proper display in narrow viewports */
+.navbar-wrapper > .container {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.img-logo-responsive {
+  height: 70px !important;
+  width: 100%;
+}
+
+/* Define menú area
+-------------------------------------------------- */
+#navbar{
+  margin-left: 0em;
+  margin-top:  0.7em;
+}
+.menuset {
+  float: left;
+}
+
+.navbar-wrapper .container {
+  padding-bottom:  0px;
+}
+
+.navbar-wrapper .navbar {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+.navbar-wrapper .navbar .container {
+  
+}
+.navbar-wrapper .container .navbar-default{
+  background-color: transparent;
+  border-color: transparent;
+  margin-top: -10px;
+}
+.navbar-wrapper .navbar .container .navbar-header .navbar-brand {
+  width: 220px;
+  height: 75px;
+  margin-top: -10px;
+}
+
+.navbar-nav > li.last-element {
+  border: none;
+}
+
+.navbar-nav > li {
+  float:left;
+  border-right: 1px solid #dddddd;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.navbar-default .navbar-nav > li > a{
+  font-family: "Oswald", "Lato", "Helvetica Neue",Helvetica,Arial,sans-serif;
+  text-transform: uppercase;
+  font-size: 16px;
+  color: white;
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+    color: #ff0000;
+}
+
+.navbar-default .navbar-nav > li > a:focus {
+    color: white;
+}
+
+.nav>li>a.search-icon {
+
+  float: right;
+  margin-top: -4em;
+  color: white;
+  margin-right: -1.2em;
+
+}
+
+a:focus.search-icon {
+  color: white;
+}
+
+.search-button-left {
+    display: none;
+}
+
+#inputSearch {
+  border-radius: 0em 0.25em 0.25em 0em;
+}
+
+.user-logged{
+  font-family: "Oswald", "Lato", "Helvetica Neue",Helvetica,Arial,sans-serif;
+  text-transform: uppercase;
+}
+
+/* Profile picture
+-------------------------------------------------- */
+.profile-info{
+  padding-top: 8px;
+  padding-bottom: 10px;
+  padding-right: 18px;
+}
+.profile-info>img{
+  height: 32px;
+  width: 32px;
+}
+.profile-info>small{
+  color:#5a5a5a;
+  padding-left: 10px;
+}
+
+
+
+/* CUSTOMIZE THE CAROUSEL
+-------------------------------------------------- */
+
+/* Carousel base class */
+.carousel {
+  margin-top:  96px;
+  height: 500px;
+  margin-bottom: 60px;
+}
+/* Since positioning the image, we need to help out the caption */
+.carousel-box {
+  z-index: 10;
+  right: 0px;
+  left: 0px;
+  bottom: 0px;
+  opacity:0.7;
+  background-color: #000000;
+  padding-top: 140px;
+  height: 100%;
+  width: 100%;
+}
+
+/* Declare heights because of positioning of img element */
+.carousel .item {
+  height: 500px;
+  background-color: #777;
+}
+
+.carousel-caption {
+  padding-bottom: 85px;
+}
+
+.carousel-inner > .item > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  height: 100%;
+}
+
+.btn-carousel{
+  color: #fff;
+  border-color: #fff;
+  margin-top: 2em;
+}
+
+.btn-carousel:hover{
+  color: #000;
+  border-color: #000;
+  background-color: #fff;
+}
+
+.carousel-control {
+  top: 0px;
+}
+
+
+/* MAIN BUTTONS HOME
+-------------------------------------------------- */
+.home-header-buttons{
+  margin-bottom: 10em;
+}
+
+.show-more-area{
+  padding-top: 50px;
+}
+
+
+.btn-header-options {
+  color: #fff;
+  background-color: #1cbcb2;
+  border-color: #1aada4;
+  width: 100%;
+  margin-top: 15px;
+}
+
+.btn-header-options:hover {
+  color: #dadada;
+  opacity: 0.7;
+}
+
+.btn-header-options:focus {
+  color: #cacaca;
+}
+
+
+/* CAMPAIGNS CONTENT
+-------------------------------------------------- */
+
+/* Center align the text within the three columns below the carousel */
+.campaigns {
+  font-size:  14px;
+  padding-bottom:  220px;
+  padding-left: 2em;
+  padding-right: 2em;
+}
+
+.thumbnail {
+  background-color: #fff;
+  padding: 0px;
+  border: 1px solid rgba(56, 56, 56, 0.15);
+}
+
+.campaign-list-right .thumbnail {
+  padding-top: 8px;
+  padding-bottom: 20px;
+  margin-top:  -20px;
+}
+
+.campaign-list, .campaign-list-right {
+  padding-top:  20px;
+  margin-bottom: 0px;
+  text-align: center;
+}
+
+.campaigns h2 {
+   color: #79797c;
+   font-size: 28px;
+}
+
+.campaigns h3 {
+  font-size: 32px;
+  font-weight: normal;
+  background-color: #fff;
+  padding-bottom: 0.6em;
+  margin-top: 0em;
+  margin-bottom: 0px;
+  height: 2em;
+  text-transform: capitalize;
+  text-align: left;
+  display: table;
+}
+
+.campaigns h4 {
+  font-size: 16px;
+  text-align: left;
+  padding-left: 8px;
+  font-weight: bold;
+}
+
+a.campaign-name {
+  color: #6a6a6a;
+}
+
+a.campaign-owner {
+  color: #6a6a6a;
+  display: table-cell;
+  vertical-align: bottom;
+}
+
+.edit-campaign-name {
+  color:#e90e79;
+  padding-top:  28px;
+  text-align: center;
+  font-size: 18px;
+}
+
+.price-title{
+  padding-left: 24px;
+  text-align: justify;
+}
+
+.price-title h4{
+  font-size: 22px;
+}
+
+.price-amount{
+  padding-left: 10px;
+  text-align: justify;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.campaign-progress {
+  height: 20px;
+  margin-top: 14px;
+  margin-bottom: 5px;
+}
+
+.campaign-progress-info-area {
+  margin-top: 20px;
+}
+
+.campaign-progress-info {
+  text-align: justify;
+  padding-left: 12px;
+  padding-top: 4px;
+  font-size: 16px;
+}
+
+.edit-price{
+  text-align: right;
+  padding-top: 6px;
+  padding-right: 32px;
+  font-size: 18px;
+}
+
+a.link-edit-camp, a.link-edit-profile{
+  color:#e90e79;
+}
+
+.btn-save-all {
+  color: #fff;
+  background-color: #1cbcb2;
+  border-color: #1aada4;
+}
+
+.btn-cancel-edit {
+  color: #fff;
+  background-color: #e90e79;
+  border-color: #e90e79;
+}
+
+.campaign-list p, .campaign-list-right p {
+  color: #6a6a6a;
+  margin-right: 10px;
+  margin-left: 10px;
+  text-align: left;
+  height: 100px;
+  font-size: 14px;
+}
+
+.campaign-list .campaign-values p, .campaign-list-right .campaign-values p{
+  color: #6a6a6a;
+  font-size: 16px;
+  font-weight: normal;
+  height: 100%;
+  padding-top: 15px;
+}
+
+.campaign-list .campaign-values .progress, .campaign-list-right .campaign-values .progress{
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.campaign-list .campaign-values .progress-bar, .campaign-list-right .campaign-values .progress-bar{
+  background-color: #e90e79;
+}
+
+.campaign-completed {
+  margin-top: -23px;
+}
+
+.img-gift-box {
+  background-color: #fff;
+  display: table-cell;
+  padding-top: 1px;
+  padding-left: 1px;
+  padding-right: 1px;
+}
+
+.img-gift {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+
+/* Featurettes
+------------------------- */
+
+.featurette-divider {
+  margin: 80px 0; /* Space out the Bootstrap <hr> more */
+}
+
+/* Thin out the campaigns headings */
+.featurette-heading {
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+
+/* Campaign Details
+-------------------------------------------------- */
+
+.edit-all-campaign-area{
+  margin-left: 30px;
+}
+
+.edit-all-campaign, .delete-campaign {
+  padding-bottom: 14px;
+  margin-right: 15px;
+  margin-left: 15px;
+}
+
+.edit-all-campaign-inprogress{
+    padding-top: 24px;
+    padding-bottom: 24px;
+}
+
+.btn-edit-camp,
+.btn-delete-camp{
+  font-size: 16px;
+  border: 1px solid #ddd;
+  color: #e90e79;
+  background: none;
+}
+
+.btn-edit-camp:active,
+.btn-edit-camp:hover,
+.btn-edit-camp:focus{
+  background-color: #f5f5f5;
+  color: #6a6a6a;
+}
+
+.btn-delete-camp:active,
+.btn-delete-camp:hover,
+.btn-delete-camp:focus{
+  background-color: #df7a7a !important;
+  color: #FFFFFF !important;
+  border-color: #c05a58;
+}
+
+
+.form-edit{
+  padding-bottom: 16px;
+}
+
+.campaign-details{
+  padding-top: 120px;
+  padding-bottom: 250px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.campaign-details h1 {
+  /*padding-left: 32px;*/
+  font-size: 44px !important;
+  margin-bottom: 0px;
+  text-align: left;
+}
+
+.campaign-details h2 {
+    text-align: center;
+    font-size: 42px;
+    padding-top: 10px;
+    margin-bottom: 5px;
+    color: #000;
+    font-weight: bold;
+    font-weight: normal;
+}
+
+.campaign-details h3 {
+  color: #1cbcb2;
+  font-weight: normal;
+  text-align: center;
+  font-size: 18px;
+  margin-top: 0px;
+}
+
+
+h2.edit-campaign-title {
+  text-align: center;
+  font-size: 34px;
+  padding-top: 10px;
+  margin-bottom: 5px;
+  color: #000;
+}
+
+.edit-campaign-box {
+  background-color: #f3f3f3;
+  padding: 20px 50px 10px 40px;
+  border-radius: 15px;
+  border: 1px solid #f3f3f3;
+}
+
+
+.camp-name-area{
+  padding-top: 7em;
+}
+
+.campaign-full-picture {
+  height: 100%;
+  width: 100%;
+  margin-top: 2px;
+}
+
+.campaign-full-picture-box {
+  height: 100%;
+  background-color: #ededed;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  padding-top: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.edit-campaign-full-picture-box {
+  height:100%;
+  width: 100%;
+  background-color: #fff;
+  display:inline-block;
+  position:relative;
+}
+
+.browse-picture-area{
+  background-color: #e4e4e4;
+  margin-left: 0px;
+  margin-right: 0px;
+  border-bottom: 1px solid #f0f3f7;
+}
+
+
+.grey-line{
+  border: 1px solid #cacacd;
+}
+
+.profile-picture{
+  width: 88px;
+  height: 88px;
+  margin-left:22%;
+}
+
+  .select-campaign-image{
+    padding-top: 15px;
+  }
+
+  .file-selector{
+    padding-bottom: 15px;
+    font-size: 14px;
+  }
+
+  .campaign-owner{
+    margin-top: 10px;
+    padding-left: 0px;
+  }
+
+  .inputDonate{
+    width: 100%
+  }
+
+  .currency-radius{
+    border-radius: 5px !important;
+  }
+
+  .bubble-description {
+    position: relative;
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    background: #ededed;
+    font-size: 16px;
+    -webkit-border-radius: 0px 0px 5px 5px;
+    -moz-border-radius: 0px 0px 5px 5px;
+    border-radius: 0px 0px 5px 5px;
+    margin-left: 0px;
+  }
+
+  .bubble-description:after {
+    content: '';
+    position: absolute;
+    border-style: solid;
+    border-width: 10px 10px 0;
+    border-color: #ededed transparent;
+    display: block;
+    width: 0;
+    z-index: 1;
+    margin-left: -10px;
+    bottom: -10px;
+    left: 11%;
+  }
+
+
+  /* Share campaign area
+   --------------------*/
+  
+
+  .bubble-short-link {
+    position: relative;
+    width: 250px;
+    height: 120px;
+    padding: 6px;
+    background: #FFFFFF;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    border: #7F7F7F solid 1px;
+  }
+
+  .bubble-short-link:after {
+    content: '';
+    position: absolute;
+    border-style: solid;
+    border-width: 0 5px 5px;
+    border-color: #FFFFFF transparent;
+    display: block;
+    width: 0;
+    z-index: 1;
+    margin-left: -5px;
+    top: -5px;
+    left: 20%;
+  }
+
+  .bubble-short-link:before {
+    content: '';
+    position: absolute;
+    border-style: solid;
+    border-width: 0 5px 5px;
+    border-color: #7F7F7F transparent;
+    display: block;
+    width: 0;
+    z-index: 0;
+    margin-left: -5px;
+    top: -6px;
+    left: 20%;
+  }
+
+  
+
+  .short-link-area {
+    margin-bottom: 2em;
+    display: none;
+  }
+
+  .share-buttons{
+    margin-top: 24px;
+  }
+
+  .share-campaign-area {
+    /*margin-top: 12px;*/
+    padding-left: 12%;
+    padding-bottom: 12px;
+  }
+
+  .share-campaign-element {
+    border: 2px solid #1CBCB2;
+    border-radius: 8px;
+    margin-right: 6px;
+    padding: 0px;
+    width: 3.5em;
+    height: 3.5em;
+  }
+
+  .share-adjust-stack{
+    width: 1.7em !important;
+    height: 1.7em !important;
+    line-height: 1.7em !important;
+  }
+
+  .campaign-last-message {
+    background-color: #f8b8d8;
+  }
+
+  .alert-default {
+    color: #1CBCB2;
+    border-color: #1CBCB2;
+    border-width: 1px;
+    font-size: 16px;
+  }
+
+
+  .alert-hightlight .close {
+    position: relative;
+    font-size: 16px;
+    top: -10px;
+    right: -30px;
+    color: #f9f9f9;
+    background-color: #e9127b;
+    border-radius: 50%;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  .alert-hightlight .next {
+    top: 12px;
+    right: -52px;
+  }
+
+  .alert-comments{
+    margin-left: 14px;
+    margin-right: 14px;
+    font-size: 18px;
+  }
+
+  .comments-area {
+    border: 1px solid rgba(56, 56, 56, 0.15);
+    border-radius: 4px;
+    margin-bottom: 24px;
+  }
+
+  .campaign-comment-title{
+    font-size: 16px;
+    font-weight: bold;
+    padding-top: 14px;
+  }
+
+  .campaign-comment-text{
+    font-size: 14px;
+  }
+
+  .next-campaign-comment{
+    padding:  12px 24px 24px 24px;
+    font-size: 18px;
+  }
+
+  .hightlight-dark-red {
+    color:  #a94442 !important;
+  }
+
+  .hightlight-red {
+    color:  #e90e79 !important;
+  }
+
+  .alert-hightlight {
+    color: #888887;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+  }
+
+  #form-edit-price-amount {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .text-area-box {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100% !important;
+  }
+
+  #inputCampDescription { 
+    margin: 2px 2px 2px 2px;
+    height: 215px;
+  }
+
+  #inputContribute{
+    font-size: 16px;
+  }
+
+
+  #form-edit-CampPriceAmount{
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  #inputCampPriceAmount {
+    font-size: 18px;
+  }
+  .camp-price-amount-block{
+    display: block !important;
+  }
+  .camp-price-amount-inline{
+    border-top-right-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
+  }
+
+  .btn-group-edit-photo {
+    margin-left: 32px;
+    padding-bottom: 12px;
+    padding-top: 4px;
+  }
+
+  /*
+  Comment Section For Campaign Details
+   */
+  .campaign-contribution-amount{
+    width: 90%;
+    margin-left:14px;
+  }
+
+  .cyan-text {
+    color: #1cbcb2;
+    font-weight: normal;
+    text-transform: uppercase;
+  }
+
+  .cyan-text-normal {
+    color: #1cbcb2;
+    font-weight: normal;
+  }
+
+  .contribute-form-area{
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .btn-contribute-now {
+    margin-top: 0px;
+    margin-left: 3px;
+    width: 97% !important;
+    font-size: 24px !important;
+
+  }
+
+  .campaign-owner-name{
+    font-size: 16px;
+    text-align: center;
+  }
+
+  #inputContribMsg{
+    width: 100%;
+    height: 120px;
+    white-space: normal;
+    word-wrap: break-word;
+    word-wrap: break-word !important;
+    white-space: normal!important;
+  }
+
+/* CHECKOUT PAGE
+------------------------- */
+
+  .checkout-flow{
+    width: 100%;
+    background-color: #fff;
+    padding-top: 170px;
+  }
+
+  .checkout-flow h1 {
+    padding-left: 32px;
+    font-size:  48px !important;
+    padding-bottom: 72px;
+  }
+
+  .checkout-flow-steps{
+    display: none;
+  }
+
+  .checkout-flow-steps>li{
+    padding-bottom: 12px;
+  }
+
+  .checkout-current-step{
+    border-bottom: 5px solid;
+  }
+
+  .checkout-contribution-area{
+    padding-bottom: 350px;
+    background-color: #fff;
+  }
+
+  .checkout-contribution-form{
+    margin-left: 20px;
+    margin-right: 20px;
+    background-color: #f5f5f5;
+    padding-top: 24px;
+  }
+
+  .checkout-campaign-photo{
+    width: 100%;
+    height: 217px;
+  }
+
+  .checkout-contribution-summary{
+    background-color: #fff;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    margin-top: 12px;
+    font-size: 16px;
+  }
+
+  .checkout-contribution-form>.form-group>label{
+    color: #1cbcb2;
+  }
+
+  .confirm-contrib-area{
+    padding-top: 36px;
+    padding-bottom: 48px;
+    width:  50%;
+  }
+
+  .contrib-value {
+    height: 175px;
+    border-bottom: 1px solid #cacacd;
+  }
+
+  .confirm-contrib-area>input{
+    font-size: 24px;
+  }
+
+  .checkout-contribution-summary-info{
+    font-size: 24px;
+  }
+
+  .preview-label{
+    display: block;
+    color: #1cbcb2;
+    font-size: 14px;
+  }
+
+  .checkout-right-currency-symbol{
+    background-color: #fff;
+    border-bottom-right-radius: 5px !important;
+    border-top-right-radius: 5px !important;
+  }
+
+  .checkout-options{
+    margin-left: 12px;
+  }
+  .link-back-campaign{
+    text-align: center;;
+  }
+
+/* PAYMENT METHOD
+------------------------- */
+  .contrib-paymant-summary{
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  .contrib-value-info{
+    background-color: #fff;
+    margin: 0 15px 10px 15px;
+    font-size: 16px;
+  }
+
+  .contrib-total-payment{
+    border-top: 2px solid #cacacd;
+    margin-top: 8px;
+    padding-top: 5px;
+  }
+  .contrib-total-payment-text{
+    padding-left: 0;
+    padding-bottom: 14px;
+  }
+  .contrib-total-payment-value{
+    padding-right: 0;
+    text-align: right;
+    padding-bottom: 14px;
+  }
+
+  .contrib-credit-card-info{
+    margin-top: 24px;
+    padding: 12px 24px 24px 36px;
+    border-top: 20px solid #fff;
+  }
+
+  .contrib-btn-pay-area{
+    background-color: #fff;
+  }
+
+/* PAYMENT CONFIRMATION */
+  .bg-light-turquoise{
+    background-color: #f0f3f7 !important;
+  }
+
+  .confirmation-thanks{
+    width: 100%;
+    padding-top: 130px;
+    padding-bottom: 24px;
+  }
+
+  .checkout-confirmation-form{
+    margin-left: 24px;
+    margin-right: 24px;
+    background-color: #fff;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    border: 1.5px solid #dedede;
+  }
+
+  .contrib-confirm-value-info{
+    margin: 0 56px 10px 15px;
+    font-size: 16px;
+  }
+
+  .share-contribution-area{
+    background-color: #fff;
+    margin-top: 24px;
+    margin-bottom: 100px;
+  }
+
+  .confirmation-separator{
+    width: 100%;
+    padding-top: 24px;
+    background-color: #f0f3f7;
+  }
+
+  .confirmation-bottom{
+    width: 100%;
+    padding-top: 130px;
+    padding-bottom: 48px;
+    background-color: #f0f3f7;
+  }
+
+  .FBConnectButton {
+    height: 30px;
+    float: left;
+    background-position-y: -251px;
+    background-position-x: -1px;
+    border-bottom: 1px solid #1a356e;
+  }
+
+  .contrib-share-box {
+    padding-top: 24px;
+    padding-left: 10%;
+    padding-bottom: 28px;
+  }
+
+  .contrib-share-element {
+    padding-top: 30px;
+    padding-bottom: 12px;
+    margin-right: 12px;
+  }
+
+  .contrib-share-short-link{
+      padding-top: 0px !important;
+  }
+
+  .contrib-share-facebook{
+      padding-top: 38px;
+  }
+
+  .contrib-share-twitter, .contrib-share-google-plus{
+      padding-top: 35px;
+  }
+
+
+/* Profile Area
+------------------------- */
+  .account-profile-picture{
+    min-width: 240px;
+    min-height: 240px;
+  }
+
+  .account-profile-title{
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-left: 12%;
+  }
+
+  .white-background{
+    background-color: #fff !important;
+  }
+
+  .summary-account-data {
+    margin-top: -6px;
+    font-size: 14px;
+  }
+
+  .rounded-box{
+    border-radius: 4px;
+    margin-top: 24px;
+    margin-bottom: 24px;
+    padding-bottom: 36px;
+  }
+
+  .profile-area {
+    padding-bottom: 250px;
+    padding-left: 120px;
+    padding-right: 24px;
+    width: 100%;
+  }
+
+  .account-info-header {
+    width: 100%;
+    background-color: #fff;
+    padding-top: 130px;
+  }
+
+  .account-info-menu{
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    padding-top: 8px;
+    width: 85%;
+    margin-top: 60px;
+  }
+
+  .account-info-menu>li{
+    padding-left: 18px;
+    font-size: 18px;
+    padding-right: 18px;
+    height: 36px;
+    margin-bottom: 5px;
+  }
+
+  .account-info-menu>li>a{
+    color: #6a6a6a;
+    line-height: 6px;
+    margin-bottom: 12px;
+    height: 2em;
+  }
+
+  .account-info-menu>li>a:active,
+  .account-info-menu>li>a:hover{
+    text-decoration: underline;
+    background-color: #fff;
+  }
+
+  .account-info-edit-area{
+    margin-top: 1.35em;
+  }
+
+  .btn-account-info-edit{
+    color: #e90e79;
+    border-color: #e90e79;
+    font-size: 16px;
+  }
+
+  .btn-account-info-edit:active,
+  .btn-account-info-edit:focus,
+  .btn-account-info-edit:hover{
+    color: #fff;
+    background-color: #c1005f;
+    border-color: #c1005f;
+  }
+
+  .account-info-menu>li>a.account-info-menu-selected{
+    border-bottom: 5px solid #e90e79;
+    color:#e90e79;
+    height: 44px;
+  }
+
+  .account-about-me{
+    font-size: 16px;
+    list-style: none;
+  }
+
+  .account-info{
+    font-size: 16px;
+    list-style: none;
+  }
+
+  .account-info>li {
+    padding-bottom: 12px;
+  }
+
+  .account-info>li>span.badge,
+  .account-info>li>span.label{
+    font-size: 16px;
+  }
+
+  .profile-search-title{
+    padding-bottom: 12px;
+    padding-left: 16px;
+  }
+
+
+  /* My campaigns area */
+
+  .line-top{
+    border-top: 1px solid #ccc;
+  }
+
+
+/* Footer Section
+------------------------- */
+footer{
+  color: #f0f3f7;
+  background-color: #292c35;
+  position: relative;
+  margin-top: -150px; /* negative value of footer height */
+  clear:both;
+  font-size: 14px;
+}
+
+footer .container{
+  padding-top: 3em;
+  padding-bottom: 3em;
+}
+
+.footer-divider {
+  margin-top: 50px;
+}
+
+.footer-title {
+  width: 100%;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.footer-links, .contact-info {
+  font-weight: normal;
+  line-height: 20px;
+  display: block;
+  color: #ffffff;
+  padding-left: 1.2em;
+  padding-top: 0.4em;
+}
+.footer-links:hover, .footer-links:active {
+  text-decoration: underline;
+  color: #dadada;
+}
+
+
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+
+@media (max-width: 767px) {
+  #navbar {
+    width: 100%;
+    background-color: #ffffff;
+    border: 1px solid #5a5a5a;
+    border-radius: 5px;
+    margin: -0.35em 0em 0em 0em;
+  }
+
+  .navbar-nav {
+    margin: 0em 0em 0em 0em;
+  }
+
+
+  .navbar-toggle {
+     margin-top: 25px;
+  }
+
+  .navbar-collapse {
+    padding-right: 8px;
+  }
+
+  .navbar-nav > li {
+    width:  50%;
+    text-align: center;
+    border: none;
+    margin-bottom: 12px;
+  }
+
+  .navbar-default .navbar-nav > li > a{
+    color: #5a5a5a;
+  }
+
+  .navbar-default .navbar-nav > li > a:focus{
+    color: #5a5a5a;
+  }
+
+  .navbar-nav > li.search-campaign {
+    width:  100%;
+    margin: -0.6em 0em -0.6em 0em;
+    padding-right: 0.5em;
+  }
+  
+  .nav>li>a.search-icon {
+    display: none;
+  }
+
+  .search-button-right {
+    display: none;
+  }
+  
+  .search-button-left {
+    display: table-cell;
+  }
+
+  .hide-search{
+    display: block;
+  }
+
+
+  .bubble {
+    border: none;
+    background-color: transparent !important;
+  }
+
+  .bubble:after {
+    border: none;
+    background-color: transparent !important;
+  }
+
+
+  .navbar-nav > li.last-element-mobile {
+    border-right: 1px solid #dddddd;
+  }
+
+  /* CHECKOUT */
+  .confirm-contrib-area{
+    margin-left: 14px;
+    margin-right: 14px;
+    width:  95%;
+  }
+
+  .btn-pay-area {
+    margin-bottom: 24px;
+  }
+
+  .btn-pay-area > .btn-header-options{
+    font-size: 20px;
+  }
+
+  .payment-fields-offset {
+    padding-bottom: 18px;
+  }
+
+  .contrib-share-box {
+    padding-left: 40%;
+  }
+
+
+}
+
+@media (min-width: 768px) {
+  
+  a.user-looged-name {
+    color:#fff;
+  }
+
+  .navbar-wrapper .navbar .container .navbar-header .navbar-brand {
+    margin-top: -20px;
+  }
+
+  .img-logo-responsive {
+    height: 90px !important;
+  }
+  
+  .profile-info>small{
+    color:white;
+  }
+
+  .menuset {
+    width: 60%;
+    margin-left: 5em;
+
+  }
+
+  .navbar-wrapper{
+    height: 130px;
+  }
+
+  .navbar-wrapper .container {
+    padding-right: 5px;
+    padding-left: 5px;
+    width: 92%;
+  }
+  .navbar-wrapper .navbar {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  .navbar-default .navbar-nav > li > a {
+    font-size: 14px;
+  }
+
+
+  /* SEACH FORM */
+
+  .search-form-area{
+    margin-top: 6px;
+    width: 390px;
+    padding-left: 10px;
+    padding-right: 30px;
+  }
+
+  #inputSearch {
+    font-size: 90%;
+    border-radius: 0em 0.5em 0.5em 0em;
+  }
+
+  .hide-search{
+    display: none;
+  }
+
+
+  .bubble {
+    position: relative;
+    width: 325px;
+    height: 55px;
+    padding: 2px;
+    background: #FFFFFF;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+  }
+
+  
+  .bubble:after {
+    content: '';
+    position: absolute;
+    border-style: solid;
+    border-width: 0 10px 11px;
+    border-color: #FFFFFF transparent;
+    display: block;
+    width: 0;
+    z-index: 1;
+    margin-left: -10px;
+    top: -11px;
+    left: 80%;
+  }
+
+  .navbar-nav > li.search-campaign {
+    position: absolute;
+    margin-top:  4em;
+    margin-left: 0em;
+    width: 35%;
+  }
+
+
+  /* The navbar becomes detached from the top, so we round the corners */
+  .navbar-wrapper .navbar {
+    border-radius: 4px;
+  }
+
+  /* Bump up size of carousel content */
+  .carousel-caption p {
+    margin-bottom: 20px;
+    font-size: 21px;
+    line-height: 1.4;
+  }
+
+  /*
+  Choose option layout
+   */
+  .btn-header-options {
+    font-size: 18px;
+    width: 70%;
+  }
+
+  .centered {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
+  }
+
+  .featurette-heading {
+    font-size: 50px;
+  }
+
+
+  /* CAMPAIGNS */
+  .campaigns {
+    padding-left: 6em;
+    padding-right: 6em;
+  }
+
+  .campaigns h3 {
+    font-size: 28px;
+  }
+
+  .edit-all-campaign-idle{
+    margin-top: 3em;
+  }
+
+  .bubble-short-link {
+    margin-left: 17.4em;
+  }
+
+
+
+  /*
+  Comment Section For Campaign Details
+   */
+  .campaign-contribution-amount{
+    width: 205%;
+    margin-left:0px;
+  }
+
+  .campaign-full-picture-box {
+    height: 410px;
+  }
+
+
+  /*CHECKOUT */
+  .checkout-flow-steps{
+    display: block;
+    color: #1cbcb2;
+    font-size: 18px;
+    text-align: center;
+    border: 1px solid #cacacd;
+    padding-top: 8px;
+    list-style: none;
+  }
+
+  .checkout-flow-steps>li{
+    padding-left: 65px;
+    padding-right: 65px;
+  }
+
+  .confirm-contrib-area{
+    margin-left: 0;
+    margin-right: 0;
+    width:  50%;
+  }
+
+  .contrib-value {
+    height: 130px;
+  }
+
+  .btn-pay-area{
+    margin-top: -21px;
+  }
+
+
+}
+
+@media (min-width: 992px) {
+
+  .navbar-wrapper .navbar .container .navbar-header .navbar-brand {
+    margin-top: -20px;
+  }
+
+  .img-logo-responsive {
+    height: 90px !important;
+  }
+
+  .menuset {
+    width: 75%;
+  }
+
+  .navbar-wrapper{
+    height: 95px;
+  }
+
+  .navbar-wrapper .container {
+    padding-right: 0px;
+    padding-left: 5px;
+  }
+
+  .featurette-heading {
+    margin-top: 120px;
+  }
+
+  .navbar-wrapper .navbar .container {
+    width: 950px;
+  }
+
+  .navbar-default .navbar-nav > li > a {
+    font-size: 16px;
+  }
+
+  /* SEACH FORM */
+  .search-form-area{
+    width: 340px;
+  }
+  
+  li.menu-login{
+    margin-right: -25px;
+  }
+
+  li.menu-sign-up{
+    padding-left: 45px;
+  }
+
+
+  .navbar-nav > li.search-campaign {
+    position: relative;
+    margin-top:  0em;
+    margin-left:  0em;
+    width: 40%;
+  }
+
+  #inputSearch {
+    border-radius: 0em 0.25em 0.25em 0em;
+  }
+  
+  .nav>li>a.search-icon {
+    display: none;
+  }
+
+  .search-button-right {
+    display: none;
+  }
+  
+  .search-button-left {
+    display: table-cell;
+  }
+
+  .search-form  {
+    display: block;
+  }
+
+  .bubble {
+    border: none;
+    background-color: transparent !important;
+  }
+
+  .bubble:after {
+    border: none;
+    background-color: transparent !important;
+  }
+
+  .img-gift-box {
+    height: 226px;
+  }
+
+  /* CAMPAIGNS */
+
+  .campaigns h3 {
+    font-size: 20px;
+  }
+  
+  .campaign-list {
+    width: 25%;
+  }
+
+  .campaign-list p {
+    height: 150px;
+  }
+  .thumbnail>img {
+    height: 150px;
+  }
+
+  .edit-all-campaign-idle{
+    margin-top: 0em;
+    margin-left: 10%;
+  }
+
+  .bubble-short-link {
+    margin-left: 17em;
+  }
+
+
+  /*
+  Font size for choose buttons
+   */
+  .btn-header-options {
+    font-size: 22px;
+  }
+
+  /*
+  Comment Section For Campaign Details
+   */
+  .comments-area {
+    /*margin-top: -220px;*/
+  }
+
+  .campaign-full-picture-box {
+    height: 366px;
+  }
+
+  .campaign-contribution-amount{
+    width: 155%;
+  }
+  .edit-campaign-name {
+    text-align: left;
+  }
+
+  .contribution-log {
+    width: 95%;
+    margin-right: 15px;
+    margin-left: 15px;
+    border-top: 1px solid rgba(56, 56, 56, 0.15);
+    padding-top: 12px;
+  }
+
+  .contribution-log-add-edit{
+    margin-top: 0px;
+  }
+
+  .campaign-list-right-new{
+    margin-top: -65px;
+  }
+
+  .btn-contribute-now {
+    margin-top: 0px;
+    margin-left: 3px;
+    width: 93% !important;
+  }
+
+  /*CHECKOUT */
+  .checkout-flow-steps>li{
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+  .checkout-contribution-form{
+    margin-left: 100px;
+    margin-right: 100px;
+  }
+
+}
+
+@media (min-width:1200px){
+  
+  .navbar-wrapper .navbar .container .navbar-header .navbar-brand {
+    margin-top: -20px;
+  }
+
+  .img-logo-responsive {
+    height: 90px !important;
+  }
+
+  .menuset {
+    width: 75%;
+  }
+
+  .navbar-wrapper .navbar .container {
+    width: auto;
+  }
+
+  li.menu-login{
+    margin-right: -75px;
+  }
+
+  li.menu-sign-up{
+    padding-left: 130px;
+  }
+
+  .search-form-area{
+    width: 420px;
+  }
+
+  .navbar-nav > li.search-campaign {
+    width: 300px;
+  }
+  
+  /* CAMPAIGNS */
+
+  .campaigns h3 {
+    
+  }
+
+  .campaign-list p {
+    height: 100px;
+  }
+
+  /* Campaign Details
+  -------------------------------------------------- */
+
+  .campaign-details{
+    padding-left: 80px;
+    padding-right: 138px;
+  }
+
+  /*
+  Font size for choose buttons
+   */
+  .btn-header-options {
+    font-size: 24px;
+  }
+
+  /*
+  Comment Section For Campaign Details
+   */
+  .comments-area {
+    /*margin-top: -220px;*/
+  }
+
+
+  .campaign-contribution-amount{
+    width: 190%;
+  }
+
+  .bubble-short-link {
+    margin-left: 18.2em;
+  }
+
+  /*CHECKOUT */
+  .checkout-flow-steps>li{
+    padding-left: 120px;
+    padding-right: 120px;
+  }
+  .checkout-contribution-form{
+    margin-left: 145px;
+    margin-right: 145px;
+  }
+
+}

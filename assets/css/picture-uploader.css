@@ -1,0 +1,25 @@
+.btn-upload{
+    position:absolute;
+    top:6px;
+    left:24px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    background:#1cbcb2;
+    color:#FFF;
+}
+
+.btn-clear-picture {
+    position:absolute;
+    top:6px;
+    left:63px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    background:#6a6a6a;
+    color:#FFF;
+}
+
+.msgLoadingImg {
+    position:absolute;
+    top:40%;
+    left:40%;
+}

@@ -1,0 +1,145 @@
+
+.login-area{
+  padding-top: 145px;
+  padding-bottom: 250px;
+}
+
+.form-login {
+  max-width: 480px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-login .form-login-head {
+  margin-bottom: 10px;
+  font-size: 18px;
+  border-bottom: 2px solid #d5d5d5;
+  vertical-align: middle;
+  padding-bottom: 18px;
+}
+
+
+.form-login .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+  
+}
+
+.form-login .control-margin-top{
+  margin-top: 6px;
+}
+
+.form-login .control-margin-bottom{
+  margin-bottom: 6px;
+}
+
+.form-login .control-date-picker{
+  border-top-left-radius: 4px !important;
+  border-bottom-left-radius: 4px !important;
+}
+
+.form-login .form-control:focus {
+  z-index: 2;
+  border-color: #74c14a;
+}
+.form-login input[type="text"] .new-password{
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-login input[type="password"] .confirm-password {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.form-group {
+  padding-bottom: 10px;
+}
+
+.logo_login{
+	height: 190px;
+	width:  300px;
+}
+.form-login .password-recovery{
+	margin-top: 14px;
+	text-align: center;
+}
+
+.form-login .password-recovery a{
+	font-weight: normal;
+	font-size: 14px;
+	color: #7c7c7c;	
+}
+
+.form-login .info-recovery{
+	color: black;
+	text-align: center;
+}
+
+.form-login .btn-primary{
+	margin-top: 14px;
+	background-color: #74c14a;
+	border-color: #74c14a;
+}
+
+.form-login .btn-social-media{
+  margin-top: 14px;
+  width: 100%;
+  color: white;
+  height: 2.8em !important;
+}
+.form-login .social-media-text{
+  font-weight: bold;
+  line-height: 1.8em;
+}
+
+.form-login .separator-line{
+  height: 1.22em;
+  padding-top: 0.15em;
+  padding-right: 0.5em;
+  margin-top: -0.165em;
+  border-right: 1px solid #fff !important;
+}
+
+.form-login .facebook-color{
+  background-color: #3c5b9a;
+  border-color: #3c5b9a;
+}
+
+.form-login .google-plus-color{
+  background-color: #d94a39;
+  border-color: #d94a39;
+}
+
+.form-login .twitter-color{
+  background-color: #55acee;
+  border-color: #55acee;
+}
+
+.btn-login{
+  background-color: #1cbcb2;
+  border-color: #1aada4;
+  font-size: 22px;
+  color:#fff;
+}
+.btn-login:hover, 
+.form-login .facebook-color:hover,
+.form-login .google-plus-color:hover,
+.form-login .twitter-color:hover {
+  color: #dadada;
+  opacity: 0.7;
+}
+
+
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+
+@media (min-width: 992px) {
+.navbar-wrapper{
+    height: 95px !important;
+  }
+}
