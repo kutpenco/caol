@@ -1,4 +1,4 @@
-<?php //var_dump_pretty($relatorio);?>
+
 <?php if ($relatorio):?>
 <div class="row">
 	<div class="col-xs-12">

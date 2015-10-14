@@ -59,7 +59,7 @@
 
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                            <img class="img-rounded" src="<?=$user_pic;?>" height="32px" width="32px">  <?=$current_user;
+                            <img class="img-rounded" src="<?=base_url('assets/img/no-profile-picture-male.jpg');?>" height="32px" width="32px">  <?=$current_user;
 ?> <i class="fa fa-caret-down"></i>
                         </a>
                         <ul class="dropdown-menu dropdown-user">

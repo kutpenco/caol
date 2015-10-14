@@ -2,6 +2,10 @@
 	exit('No direct script access allowed');
 }
 
+/**
+ * Classe para conexões com fatura
+ * */
+
 class cao_fatura_model extends MY_Model {
 
 	public function cao_fatura() {
@@ -34,7 +38,7 @@ class cao_fatura_model extends MY_Model {
 
 		$data = array();
 
-		$epoch_time = strtotime($rs_get_custo->min_ano_emissao."-".$rs_get_custo->min_mes_emissao."-14")*1000;
+		$epoch_time = strtotime($rs_get_custo->min_ano_emissao."-".$rs_get_custo->min_mes_emissao."-01")*1000;
 		$data[]     = array($epoch_time, $rs_get_custo->avg_custo_fixo);
 
 		$last_day_month = date("t", strtotime($rs_get_custo->max_ano_emissao."-".$rs_get_custo->max_mes_emissao."-01"));
@@ -93,16 +97,43 @@ class cao_fatura_model extends MY_Model {
 
 	}
 
-	private function get_max_receita($lista_consultores) {
+	private function get_max_bar_Y($lista_consultores) {
 
+		$maxY = 0;
+		$row  = $this->get_summary_receita($lista_consultores);
+
+		if ($row) {
+			$maxY = $row->max_receita_liquida > abs($row->avg_custo_fixo)?$row->max_receita_liquida:abs($row->avg_custo_fixo);
+
+			return $maxY*1.3;
+		}
+
+		return false;
+
+	}
+
+	private function validate_data_pie($lista_consultores, $co_usuario, $value) {
+
+		$total_receita = $this->get_summary_receita($lista_consultores);
+
+		$percent = $value/$total_receita->sum_receita_liquida*100;
+
+		return $percent >= 1;
+
+	}
+
+	private function get_summary_receita($lista_consultores) {
+
+		$maxY  = 0;
 		$query = $this->db
+		              ->select_avg('custo_fixo', 'avg_custo_fixo')
 		              ->select_max('receita_liquida', 'max_receita_liquida')
+		              ->select_sum('receita_liquida', 'sum_receita_liquida')
 		              ->where_in("co_usuario", $lista_consultores)
 		              ->get('view_relatorios');
 
 		if ($query && $query->num_rows > 0) {
-			$row = $query->row();
-			return $row->max_receita_liquida*1.3;
+			return $query->row();
 		}
 
 		return false;
@@ -168,6 +199,7 @@ class cao_fatura_model extends MY_Model {
 
 			$obj_report->dataset = $record_consultores;
 			$obj_report->offset  = $month_offset;
+			$obj_report->maxY    = 0;
 
 			return $obj_report;
 		}
@@ -200,7 +232,7 @@ class cao_fatura_model extends MY_Model {
 					$obj_graph->data            = array();
 					$obj_graph->bars            = new stdClass();
 					$obj_graph->bars->show      = true;
-					$obj_graph->bars->align     = "center";
+					$obj_graph->bars->align     = "right";
 					$obj_graph->bars->barWidth  = 24*60*60*600*($report->offset-1);
 					$obj_graph->bars->lineWidth = "1";
 
@@ -227,8 +259,57 @@ class cao_fatura_model extends MY_Model {
 			$json .= json_encode($line_custo_medio);
 
 			$obj_graph->dataset = $json;
-			$obj_graph->maxY    = $this->get_max_receita($lista_consultores);
+			$obj_graph->maxY    = $this->get_max_bar_Y($lista_consultores);
 
+		} else {
+			$obj_graph->dataset = false;
+			$obj_graph->maxY    = 0;
+		}
+
+		return $obj_graph;
+
+	}
+
+	public function get_relatorio_pizza($lista_consultores) {
+
+		$obj_graph = new stdClass();
+		$json      = "";
+
+		$report = $this->get_relatorio_tabela($lista_consultores);
+
+		if ($report) {
+
+			$records = $report->dataset;
+
+			foreach ($records as $key => $row) {
+
+				if ($row->report_data) {
+					if ($key > 0 && $json != "") {
+						$json .= ",";
+					}
+
+					$obj_graph = new stdClass();
+
+					$obj_graph->label = $row->no_usuario;
+					$obj_graph->data  = 0;
+
+					foreach ($row->report_data as $field => $details) {
+
+						$obj_graph->data += floatval($details->receita_liquida);
+
+					}
+
+					// Selecionar dados para o gráfico que sejam maiores ou iguais a 1%
+					if ($this->validate_data_pie($lista_consultores, $row->co_usuario, $obj_graph->data)) {
+						$json .= json_encode($obj_graph);
+					}
+
+				}
+
+			}
+
+			$obj_graph->dataset = $json;
+			$obj_graph->maxY    = 0;
 		} else {
 			$obj_graph->dataset = false;
 			$obj_graph->maxY    = 0;
@@ -248,11 +329,7 @@ class cao_fatura_model extends MY_Model {
 				return $this->get_relatorio_grafico($lista_consultores);
 				break;
 			case 'pie':
-				return $this->get_relatorio_grafico($lista_consultores);
-				break;
-
-			default:
-				# code...
+				return $this->get_relatorio_pizza($lista_consultores);
 				break;
 		}
 	}

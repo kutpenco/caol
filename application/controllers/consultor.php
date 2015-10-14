@@ -42,12 +42,16 @@ class consultor extends MY_Controller {
 		// 0 - tabela | 1 - Gráfico Barra | 2 - Pizza.
 		$relatorio = $this->cao_fatura->get_relatorio_consultor($post["peopleList"], $tipo_relatorio);
 
-		//var_dump_pretty($relatorio);
-
-		$data = array(
-			"relatorio" => $relatorio->dataset,
-			"maxY"      => $relatorio->maxY,
-		);
+		if ($relatorio) {
+			$data = array(
+				"relatorio" => $relatorio->dataset,
+				"maxY"      => $relatorio->maxY,
+			);
+		} else {
+			$data = array(
+				"relatorio" => false,
+			);
+		}
 
 		$this->load->view('view_people_'.$tipo_relatorio, $data);
 
