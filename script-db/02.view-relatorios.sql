@@ -1,4 +1,3 @@
--- USE `formula-ouro`;
 
 DROP VIEW IF EXISTS view_relatorios;
 
