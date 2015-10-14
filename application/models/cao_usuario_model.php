@@ -12,8 +12,10 @@ class cao_usuario_model extends MY_Model {
 
 	public function list_consultor($filter_in = null) {
 
+		$obj = new stdClass();
+
 		$query = $this->db
-		              ->select("u.co_usuario, u.no_usuario, s.brut_salario")
+		              ->select("u.co_usuario codigo, u.no_usuario nome, s.brut_salario")
 		              ->from("cao_usuario as u")
 		              ->join("permissao_sistema as p", "u.co_usuario = p.co_usuario")
 		              ->join("cao_salario as s", "s.co_usuario = u.co_usuario", "left")
@@ -30,9 +32,12 @@ class cao_usuario_model extends MY_Model {
 		$query = $query->get();
 
 		if ($query && $query->num_rows > 0) {
-			return $query->result();
-
+			$obj->dataset = $query->result();
+			$obj->name    = "usuario";
+			return $obj;
 		}
+
+		return false;
 	}
 
 	public function count_record() {

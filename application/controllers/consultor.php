@@ -38,9 +38,15 @@ class consultor extends MY_Controller {
 
 		$post = $this->input->post();
 
+		if ($post) {
+			$record_consultores = $this->cao_usuario_model->list_consultor($post["peopleList"]);
+		} else {
+			$record_consultores = false;
+		}
+
 		//Selectiona formato de relatorio, conforme vaor $tipo_relatorio:
 		// 0 - tabela | 1 - Gráfico Barra | 2 - Pizza.
-		$relatorio = $this->cao_fatura->get_relatorio_consultor($post["peopleList"], $tipo_relatorio);
+		$relatorio = $this->cao_fatura->get_relatorio($record_consultores, $tipo_relatorio);
 
 		if ($relatorio) {
 			$data = array(
@@ -63,7 +69,8 @@ class consultor extends MY_Controller {
 
 		$data = array(
 			"title"          => "Consultores",
-			"records"        => $record_consultores,
+			"controller"     => $this->router->fetch_class(),
+			"records"        => $record_consultores->dataset,
 			"tipo_relatorio" => "report",
 			"ajax_data_type" => "html",
 
@@ -78,7 +85,8 @@ class consultor extends MY_Controller {
 
 		$data = array(
 			"title"          => "Consultores",
-			"records"        => $record_consultores,
+			"controller"     => $this->router->fetch_class(),
+			"records"        => $record_consultores->dataset,
 			"tipo_relatorio" => "chart",
 			"ajax_data_type" => "html",
 
@@ -96,8 +104,9 @@ class consultor extends MY_Controller {
 
 		$data = array(
 			"title"          => "Consultores",
+			"controller"     => $this->router->fetch_class(),
 			"graphics_js"    => false,
-			"records"        => $record_consultores,
+			"records"        => $record_consultores->dataset,
 			"tipo_relatorio" => "pie",
 
 		);

@@ -98,7 +98,7 @@
                             <a href="<?=base_url('cliente/relatorio')?>"><i class="fa fa-file-text-o fa-fw"></i> Relatorio</a>
                         </li>
                         <li>
-                            <a href="<?=base_url('cliente/grafico')?>"><i class="fa fa-file fa-fw"></i> Gráfico</a>
+                            <a href="<?=base_url('cliente/grafico')?>"><i class="fa fa-bar-chart fa-fw"></i> Gráfico</a>
                         </li>
                         <li>
                             <a href="<?=base_url('cliente/pizza')?>"><i class="fa fa-pie-chart fa-fw"></i> Pizza</a>

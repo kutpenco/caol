@@ -1,7 +1,7 @@
 <div id="page-wrapper">
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header">Sistema de Atendimento</h1>
+            <h1 class="page-header">Controle de Atividade Online</h1>
         </div>
         <!-- /.col-lg-12 -->
     </div>

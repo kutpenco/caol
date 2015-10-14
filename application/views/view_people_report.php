@@ -3,7 +3,8 @@
 <div class="row">
 	<div class="col-xs-12">
 <?php foreach ($relatorio as $row):?>
-		<h2><?=$row->no_usuario;?></h2>
+		<?php if ($row->report_data):?>
+		<h2><?=$row->nome;?></h2>
 
 		<div class="table-responsive">
 			<table class="table table-hover">
@@ -39,6 +40,7 @@
 </tbody>
 			</table>
 		</div>
+<?php endif;?>
 
 <?php endforeach;?>
 </div>

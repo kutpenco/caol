@@ -16,7 +16,11 @@
 	</div>
 	<!-- /.row -->
 </div>
+
+<script src="<?=base_url('assets/js/autonumeric-helper.js');?>"></script>
+
 <script>
+
 //Flot Bar Chart
 
 $(function() {
@@ -40,7 +44,11 @@ $(function() {
                 axisLabelUseCanvas: true,
                 axisLabelFontSizePixels: 12,
                 axisLabelFontFamily: 'Verdana, Arial',
-                axisLabelPadding: 3
+                axisLabelPadding: 3,
+                tickFormatter: function suffixFormatter(val, axis) {
+                    var legend = '<strong>R$ ' + (val.formatMoney(2, '.', ',')) + '</strong>';
+                    return legend;
+                }
             },
             //yaxis:2
             {
@@ -51,7 +59,12 @@ $(function() {
                 axisLabelUseCanvas: true,
                 axisLabelFontSizePixels: 12,
                 axisLabelFontFamily: 'Verdana, Arial',
-                axisLabelPadding: 3
+                axisLabelPadding: 3,
+                tickFormatter: function suffixFormatter(val, axis) {
+                    var legend = '<strong>R$ ' + (val.formatMoney(2, '.', ',')) + '</strong>';
+                    return legend;
+
+                }
             }
         ],
         grid: {
@@ -63,6 +76,7 @@ $(function() {
     };
 
     $.plot($("#flot-bar-chart"), dataSet, barOptions);
+
 
     $("<div id='tooltip'></div>").css({
             position: "absolute",
@@ -91,7 +105,9 @@ $(function() {
                 .css({top: item.pageY+5, left: item.pageX+5})
                 .fadeIn(200);
 
-            $('.currency').autoNumeric();
+            $(this).initAutoNumeric();
+
+            /*$('.currency').autoNumeric();
 
             $('.currency').autoNumeric('update', {
                 aSep: '.',
@@ -100,7 +116,7 @@ $(function() {
                 aDec: ',',
                 mDec: 2,
                 vMin : -9999999
-            });
+            });*/
 
 
 
@@ -110,6 +126,8 @@ $(function() {
 
     });
 
+
+
 });
 
 function gd(year, month, day) {
@@ -117,5 +135,6 @@ function gd(year, month, day) {
 }
 
 </script>
+
 
 <?php endif;?>

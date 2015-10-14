@@ -12,7 +12,6 @@ class cao_fatura_model extends MY_Model {
 		parent::__construct();
 		$this->_table      = 'cao_fatura';
 		$this->primary_key = 'co_fatura';
-		$this->load->library('calendar');
 	}
 
 	private function prepare_data() {
@@ -31,10 +30,10 @@ class cao_fatura_model extends MY_Model {
 
 	}
 
-	private function create_dataset_average($lista_consultores) {
+	private function create_dataset_average($field, $lista_codigo) {
 
 		$obj_dataset  = new stdClass();
-		$rs_get_custo = $this->get_avg_custo_fixo($lista_consultores);
+		$rs_get_custo = $this->get_avg_custo_fixo($field, $lista_codigo);
 
 		$data = array();
 
@@ -49,9 +48,9 @@ class cao_fatura_model extends MY_Model {
 
 	}
 
-	private function draw_average_line($lista_consultores) {
+	private function draw_average_line($field, $lista_codigo) {
 
-		$data = $this->create_dataset_average($lista_consultores);
+		$data = $this->create_dataset_average($field, $lista_codigo);
 
 		$obj_graph = new stdClass();
 
@@ -74,7 +73,7 @@ class cao_fatura_model extends MY_Model {
 
 	}
 
-	private function get_avg_custo_fixo($lista_consultores) {
+	private function get_avg_custo_fixo($field, $lista_codigo) {
 
 		$query = $this->db
 		              ->select_avg('custo_fixo', 'avg_custo_fixo')
@@ -82,7 +81,7 @@ class cao_fatura_model extends MY_Model {
 		              ->select_min('mes_emissao', 'min_mes_emissao')
 		              ->select_max('ano_emissao', 'max_ano_emissao')
 		              ->select_max('mes_emissao', 'max_mes_emissao')
-		              ->where_in("co_usuario", $lista_consultores)
+		              ->where_in("co_".$field, $lista_codigo)
 		              ->get('view_relatorios');
 
 		if ($query && $query->num_rows > 0) {
@@ -97,10 +96,10 @@ class cao_fatura_model extends MY_Model {
 
 	}
 
-	private function get_max_bar_Y($lista_consultores) {
+	private function get_max_bar_Y($field, $lista_consultores) {
 
 		$maxY = 0;
-		$row  = $this->get_summary_receita($lista_consultores);
+		$row  = $this->get_summary_receita($field, $lista_consultores);
 
 		if ($row) {
 			$maxY = $row->max_receita_liquida > abs($row->avg_custo_fixo)?$row->max_receita_liquida:abs($row->avg_custo_fixo);
@@ -112,9 +111,11 @@ class cao_fatura_model extends MY_Model {
 
 	}
 
-	private function validate_data_pie($lista_consultores, $co_usuario, $value) {
+	private function validate_data_pie($field, $list_id, $co_usuario, $value) {
 
-		$total_receita = $this->get_summary_receita($lista_consultores);
+		//var_dump_pretty($list_id);
+
+		$total_receita = $this->get_summary_receita($field, $list_id);
 
 		$percent = $value/$total_receita->sum_receita_liquida*100;
 
@@ -122,14 +123,14 @@ class cao_fatura_model extends MY_Model {
 
 	}
 
-	private function get_summary_receita($lista_consultores) {
+	private function get_summary_receita($field, $list_id) {
 
 		$maxY  = 0;
 		$query = $this->db
 		              ->select_avg('custo_fixo', 'avg_custo_fixo')
 		              ->select_max('receita_liquida', 'max_receita_liquida')
 		              ->select_sum('receita_liquida', 'sum_receita_liquida')
-		              ->where_in("co_usuario", $lista_consultores)
+		              ->where_in("co_".$field, $list_id)
 		              ->get('view_relatorios');
 
 		if ($query && $query->num_rows > 0) {
@@ -140,17 +141,17 @@ class cao_fatura_model extends MY_Model {
 
 	}
 
-	public function get_relatorio_tabela($lista_consultores) {
+	private function select_data() {
+
+	}
+
+	public function get_relatorio_tabela($obj_people) {
 
 		$obj_report = new stdClass();
 
-		if ($lista_consultores == null) {
-			return false;
-		}
+		if ($obj_people) {
 
-		$record_consultores = $this->cao_usuario_model->list_consultor($lista_consultores);
-
-		if ($record_consultores) {
+			$record_consultores = $obj_people->dataset;
 
 			$month_offset = intval(30/count($record_consultores));
 
@@ -164,9 +165,9 @@ class cao_fatura_model extends MY_Model {
 				$row->total_lucro           = 0;
 
 				$query = $this->prepare_data()
-				              ->where("co_usuario", $row->co_usuario)
-					->order_by("ano_emissao, mes_emissao")
-					->get();
+				              ->where("co_".$obj_people->name, $row->codigo)
+				->order_by("ano_emissao, mes_emissao")
+				->get();
 
 				if ($query && $query->num_rows > 0) {
 
@@ -208,18 +209,21 @@ class cao_fatura_model extends MY_Model {
 
 	}
 
-	public function get_relatorio_grafico($lista_consultores) {
+	public function get_relatorio_grafico($obj_people) {
 
 		$obj_graph = new stdClass();
 		$json      = "";
 
-		$report = $this->get_relatorio_tabela($lista_consultores);
+		$report = $this->get_relatorio_tabela($obj_people);
 
 		if ($report) {
 
-			$records = $report->dataset;
+			$records      = $report->dataset;
+			$lista_codigo = array();
 
 			foreach ($records as $key => $row) {
+
+				$lista_codigo[] = $row->codigo;
 
 				if ($row->report_data) {
 					if ($key > 0 && $json != "") {
@@ -228,7 +232,7 @@ class cao_fatura_model extends MY_Model {
 
 					$obj_graph = new stdClass();
 
-					$obj_graph->label           = $row->no_usuario;
+					$obj_graph->label           = $row->nome;
 					$obj_graph->data            = array();
 					$obj_graph->bars            = new stdClass();
 					$obj_graph->bars->show      = true;
@@ -254,12 +258,12 @@ class cao_fatura_model extends MY_Model {
 				$json .= ",";
 			}
 
-			$line_custo_medio = $this->draw_average_line($lista_consultores);
+			$line_custo_medio = $this->draw_average_line($obj_people->name, $lista_codigo);
 
 			$json .= json_encode($line_custo_medio);
 
 			$obj_graph->dataset = $json;
-			$obj_graph->maxY    = $this->get_max_bar_Y($lista_consultores);
+			$obj_graph->maxY    = $this->get_max_bar_Y($obj_people->name, $lista_codigo);
 
 		} else {
 			$obj_graph->dataset = false;
@@ -270,27 +274,30 @@ class cao_fatura_model extends MY_Model {
 
 	}
 
-	public function get_relatorio_pizza($lista_consultores) {
+	public function get_relatorio_pizza($obj_people) {
 
-		$obj_graph = new stdClass();
-		$json      = "";
+		$obj_graph   = new stdClass();
+		$json        = "";
+		$valid_range = false;
 
-		$report = $this->get_relatorio_tabela($lista_consultores);
+		$report = $this->get_relatorio_tabela($obj_people);
 
 		if ($report) {
 
 			$records = $report->dataset;
+			$list_id = array();
 
 			foreach ($records as $key => $row) {
 
 				if ($row->report_data) {
-					if ($key > 0 && $json != "") {
+					if ($key > 0 && $json != "" && $valid_range) {
 						$json .= ",";
 					}
 
 					$obj_graph = new stdClass();
 
-					$obj_graph->label = $row->no_usuario;
+					$list_id[]        = $row->codigo;
+					$obj_graph->label = $row->nome;
 					$obj_graph->data  = 0;
 
 					foreach ($row->report_data as $field => $details) {
@@ -300,7 +307,9 @@ class cao_fatura_model extends MY_Model {
 					}
 
 					// Selecionar dados para o gráfico que sejam maiores ou iguais a 1%
-					if ($this->validate_data_pie($lista_consultores, $row->co_usuario, $obj_graph->data)) {
+					$valid_range = $this->validate_data_pie($obj_people->name, $list_id, $row->codigo, $obj_graph->data);
+
+					if ($valid_range) {
 						$json .= json_encode($obj_graph);
 					}
 
@@ -319,7 +328,7 @@ class cao_fatura_model extends MY_Model {
 
 	}
 
-	public function get_relatorio_consultor($lista_consultores, $tipo_relatorio) {
+	public function get_relatorio($lista_consultores, $tipo_relatorio) {
 
 		switch ($tipo_relatorio) {
 			case 'report':
