@@ -52,9 +52,9 @@ $active_group  = 'default';
 $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'betadev_crteens';
-$db['default']['password'] = '3sk_P1r(HR~Q';
-$db['default']['database'] = 'betadev_presente_top';
+$db['default']['username'] = 'betadev_caol';
+$db['default']['password'] = 'u3-CT^eXkFv2';
+$db['default']['database'] = 'betadev_caol';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;
