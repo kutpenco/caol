@@ -23,4 +23,4 @@ Possui um sistema de Login para que os consultores cadastrados possam consultar 
 
 **Configuração:**
 - Alterar as seguintes linhas no arquivo `.htaccess`para definir o caminho virtual na reescrita de URL: `RewriteBase` e `RewriteRule`
-- Configurar o archivo `application/config/{ambiente}/database.php` para colocar os dados de conexão com a base.
+- Configurar o arquivo `application/config/{ambiente}/database.php` para colocar os dados de conexão com a base.
